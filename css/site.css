@@ -172,7 +172,9 @@ html:not(.js) .mstep { position: static; opacity: 1; transform: none; width: aut
 @media (max-width: 860px) {
   .morph-track { height: auto; margin-top: 0; }
   .morph-stage { position: static; height: auto; display: block; }
-  .morph-screen { position: sticky; top: 84px; width: 100%; margin: 0 auto 30px; }
+  .morph-screen { position: relative; top: auto; width: 100%; margin: 0 auto 26px; }
+  .morph-screen .mbk-glass img:not(:first-child) { display: none; }
+  .mstep:first-child { border-top: 0; padding-top: 6px; }
   .morph-texts { position: static; }
   .mstep { position: static; opacity: 1 !important; transform: none !important; width: auto; text-align: left !important; padding: 22px 0; border-top: 1px solid var(--line); }
 }
