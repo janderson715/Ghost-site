@@ -119,8 +119,9 @@ h3 { font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); line-height: 1.25; }
 
 /* ---------- MacBook (real frame, logo wiped) ---------- */
 .mbk { position: relative; width: 100%; aspect-ratio: 1208 / 700; margin: 0; }
-.mbk-glass { position: absolute; left: 9.7%; top: 3.1%; width: 80.6%; height: 88.8%; overflow: hidden; background: #05070f; z-index: 1; }
-.mbk-glass img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.mbk-glass { background: #000 !important; position: absolute; left: 9.7%; top: 3.1%; width: 80.6%; height: 88.8%; overflow: hidden; background: #05070f; z-index: 1; }
+.mbk-glass img { display: block; position: absolute; inset: 2.7% 1.9%; width: 96.2%; height: 94.6%; border: 1px solid #1b1b20; object-fit: contain; object-position: center; }
+.mbk-glass::before { content: ""; position: absolute; left: 50%; top: 1.1%; width: 5px; height: 5px; margin-left: -2px; border-radius: 50%; background: #15161a; z-index: 3; }
 .mbk-glass::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; box-shadow: inset 0 0 0 2px #000, inset 0 0 0 3px rgba(130,134,150,.5), inset 0 0 18px 4px rgba(0,0,0,.7); }
 .mbk-frame { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
 
@@ -157,7 +158,7 @@ h3 { font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); line-height: 1.25; }
 .morph-track { position: relative; height: 420vh; margin-top: -8vh; }
 .morph-stage { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; overflow: hidden; }
 .morph-screen { position: relative; z-index: 1; width: min(55%, 1000px); aspect-ratio: 1208 / 700; margin: 0; }
-.morph-screen .mbk-glass img { position: absolute; inset: 0; will-change: transform; }
+.morph-screen .mbk-glass img { position: absolute; inset: 2.7% 1.9%; will-change: transform; }
 .morph-texts { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
 .mstep { position: absolute; top: 50%; width: min(17%, 300px); opacity: 0; transform: translateY(-50%); will-change: transform, opacity; }
 .mstep:nth-child(odd) { left: 2.5%; text-align: left; }
