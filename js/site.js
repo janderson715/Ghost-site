@@ -143,3 +143,25 @@
   fromHash();
   window.addEventListener('hashchange', fromHash);
 })();
+
+// Phones: the agent groups fold up so the page is not endless. The first group starts open.
+(function () {
+  var mq = window.matchMedia ? window.matchMedia('(max-width: 700px)') : null;
+  var fams = Array.prototype.slice.call(document.querySelectorAll('.family'));
+  if (!fams.length) return;
+  fams.forEach(function (f, i) {
+    var h = f.querySelector('h3'), list = f.querySelector('ul');
+    if (!h || !list) return;
+    h.setAttribute('role', 'button');
+    h.setAttribute('tabindex', '0');
+    function sync() { h.setAttribute('aria-expanded', f.classList.contains('open') ? 'true' : 'false'); }
+    function toggle() { if (mq && !mq.matches) return; f.classList.toggle('open'); sync(); }
+    h.addEventListener('click', toggle);
+    h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    if (i === 0) f.classList.add('open');
+    sync();
+  });
+  // On a wide screen everything is shown, so the buttons should not look or act like toggles.
+  function wide() { fams.forEach(function (f) { var h = f.querySelector('h3'); if (!h) return; if (mq && !mq.matches) { h.removeAttribute('role'); h.removeAttribute('tabindex'); h.removeAttribute('aria-expanded'); } else { h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0'); h.setAttribute('aria-expanded', f.classList.contains('open') ? 'true' : 'false'); } }); }
+  if (mq && mq.addEventListener) mq.addEventListener('change', wide); wide();
+})();
