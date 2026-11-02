@@ -88,7 +88,7 @@
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     if (data._honey) return;
     if (button) { button.disabled = true; button.textContent = 'Sending...'; }
-    fetch('https://formsubmit.co/ajax/' + email, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+    fetch('https://site-forms.janderson-6f5.workers.dev', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
       .then(function (r) { return r.json(); })
       .then(function (j) {
         if (j && (j.success === 'true' || j.success === true)) { form.reset(); show('Thank you. We received your request and will reply by email.', false); }
