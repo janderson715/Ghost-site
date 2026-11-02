@@ -98,3 +98,48 @@
       .then(function () { if (button) { button.disabled = false; button.textContent = label; } });
   });
 })();
+
+// Capability console: tabs with arrow-key support and a deep link per capability (#cap-hunter etc.).
+(function () {
+  var root = document.querySelector('.capx');
+  if (!root) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
+  if (!tabs.length) return;
+
+  function show(i, focus, skipHash) {
+    tabs.forEach(function (t, k) {
+      var on = k === i;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+    var rail = tabs[i].parentNode;
+    if (rail.scrollWidth > rail.clientWidth) {
+      rail.scrollLeft = Math.max(0, tabs[i].offsetLeft - 16);
+    }
+    if (!skipHash && window.history && history.replaceState) history.replaceState(null, '', '#' + panels[i].id);
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i, false); });
+    t.addEventListener('keydown', function (e) {
+      var k = null;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') k = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') k = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') k = 0;
+      else if (e.key === 'End') k = tabs.length - 1;
+      if (k !== null) { e.preventDefault(); show(k, true); }
+    });
+  });
+
+  function fromHash() {
+    var id = (location.hash || '').slice(1), k;
+    for (k = 0; k < panels.length; k++) {
+      if (panels[k].id === id) { show(k, false, true); var sec = document.getElementById('capabilities'); if (sec) sec.scrollIntoView(); return; }
+    }
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+})();
