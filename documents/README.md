@@ -11,3 +11,7 @@ Five documents, each in two looks. Download the PDF you need. Use the dark files
 | Agent Portfolio Cards (34 agents) | dark/GHOST-Agent-Portfolio-Cards.pdf | white-print/GHOST-Agent-Portfolio-Cards-White.pdf |
 
 Rebuilt from the source in Ray's cosmoai repo (`docs/ghost-docs`). When they change, the files here are replaced.
+
+## Preview in the browser
+
+`html/` has the same documents as web pages (open `html/index.html`), so any of them can be previewed from a link once the site is published. They carry a "noindex" tag so search engines skip them, and nothing on the website links to them.

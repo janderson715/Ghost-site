@@ -1,0 +1,11 @@
+/* White print edition: same layout, light paper. Loaded after style.css. */
+:root {
+  --bg: #ffffff; --bg2: #f4f5f7; --ink: #0d0f14; --body: #333945; --muted: #5d6573;
+  --orange: #e25800; --orange-hi: #e25800; --orange-lo: #b34a00;
+  --line: rgba(13,15,20,.2); --line-hi: rgba(13,15,20,.38);
+}
+.page > .bgart, .page > .bgfade { display: none; }
+.run img, .page img[src*="logos/"] { filter: invert(1); }
+.glow { filter: drop-shadow(0 8px 14px rgba(0,0,0,.28)); }
+.card-art { box-shadow: 0 0 0 1px rgba(13,15,20,.25); }
+.stat b { color: var(--orange); }

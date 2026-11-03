@@ -1,0 +1,78 @@
+/* Corporate edition: white pages, navy and teal, plain business type, real photographs. Loaded after style.css.
+   Same content and layout kit as the G.H.O.S.T. look, with none of the tactical lettering. */
+:root {
+  --bg: #ffffff; --bg2: #f3f6f9; --ink: #0b2545; --body: #3a4658; --muted: #6b7788;
+  --orange: #0b7a85; --orange-hi: #0b7a85; --orange-lo: #08575f;
+  --navy: #0b2545;
+  --line: rgba(11,37,69,.15); --line-hi: rgba(11,37,69,.32);
+  --disp: "Inter", system-ui, sans-serif;
+}
+body { font-size: 9.4pt; }
+.page > .bgart, .page > .bgfade { display: none; }
+.page { padding: .95in .7in .78in; }
+.run { top: 0; left: 0; right: 0; height: .62in; padding: 0 .7in; background: var(--navy); }
+.run img { filter: none; height: 15px; }
+.run span { font: 600 7pt/1 var(--font); letter-spacing: .12em; color: #b9c7da; }
+.foot { left: .7in; right: .7in; bottom: .3in; font: 500 6.8pt/1 var(--font); letter-spacing: .04em; color: var(--muted); }
+.foot b { color: var(--navy); font-family: var(--font); letter-spacing: .04em; }
+.page img[src*="logos/cypher"] { filter: none; }
+
+/* type: sentence-case labels in teal, no wide lettering */
+.eyebrow { font: 700 8pt/1.3 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
+.title { font: 800 24pt/1.12 var(--font); letter-spacing: -.02em; color: var(--navy); }
+.title.disp { font: 800 22pt/1.14 var(--font); letter-spacing: -.02em; }
+.sub { color: var(--body); }
+h3 { color: var(--navy); }
+h4 { font: 700 7.6pt/1.4 var(--font); letter-spacing: .08em; color: var(--navy); }
+strong, b { color: var(--navy); }
+.head { border-bottom: 2px solid var(--navy); }
+.item { border-top: 2px solid var(--orange); padding-top: 10px; }
+.item h4 { color: var(--navy); font-size: 8.4pt; letter-spacing: .04em; text-transform: none; font-weight: 700; }
+.item p { color: var(--body); }
+.rows > div { border-top-color: var(--line); }
+.rows dt { font: 700 7.6pt/1.45 var(--font); letter-spacing: .08em; color: var(--navy); }
+.stat { border-left: 3px solid var(--orange); }
+.stat b { font: 800 24pt/1 var(--font); color: var(--navy); letter-spacing: -.02em; }
+.flow h5 { font: 700 8pt/1.35 var(--font); letter-spacing: .04em; text-transform: none; color: var(--navy); }
+.flow > div::before { background: var(--navy); }
+.flow::before { background: var(--navy); height: 2px; top: 5px; }
+.flowtag { font: 700 7.4pt/1.4 var(--font); letter-spacing: .08em; color: var(--orange); }
+.arch .layer > h4 { color: var(--navy); }
+.quote { border-left: 3px solid var(--orange); color: var(--navy); font-weight: 600; }
+.quote cite { font: 600 7pt/1 var(--font); letter-spacing: .1em; }
+.band span { font: 700 7pt/1 var(--font); letter-spacing: .1em; color: var(--navy); border-left-color: var(--line-hi); }
+.hl { color: var(--orange); }
+.glow { filter: drop-shadow(0 10px 18px rgba(11,37,69,.28)); }
+
+/* photographs, shown straight (never under an overlay) */
+.photo { display: block; width: 100%; object-fit: cover; }
+.photo-band { margin-top: 16px; height: 1.55in; }
+
+.wave-strip { flex: none; margin: 22px -.7in 0; height: .9in; background: url(assets/photos/wave.png) center 55% / cover; }
+.statband { flex: none; margin: 0 -.7in 0; padding: .3in .7in .34in; background: var(--navy); }
+.statband .eyebrow { color: #7fd3da; margin-bottom: 14px; }
+.statband .stat { border-left-color: #7fd3da; }
+.statband .stat b { color: #fff; white-space: nowrap; font-size: 21pt; }
+.statband .stat span { color: #c9d6e8; }
+.photo-dc { flex: none; height: 3.1in; margin: 18px 0 0; object-position: center 40%; }
+
+/* cover */
+.page.cover { padding: 0; background: #fff; }
+.page.cover .body { justify-content: flex-start; height: 100%; display: block; position: relative; }
+.cv-bar { height: .62in; background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 0 .7in; }
+.cv-bar img { height: 17px; width: auto; }
+.cv-bar span { font: 600 7pt/1 var(--font); letter-spacing: .12em; text-transform: uppercase; color: #b9c7da; }
+.cv-photo { position: relative; height: 4.5in; }
+.cv-clip { position: absolute; inset: 0; overflow: hidden; background: #dfe6ee; }
+.cv-clip img.photo { height: 100%; object-position: center 62%; }
+.cv-device { position: absolute; right: .45in; bottom: -.95in; width: 3.85in; z-index: 4; }
+.cv-text { position: relative; padding: .62in .7in 0; }
+.cv-text h1 { font: 800 32pt/1.08 var(--font); letter-spacing: -.025em; color: var(--navy); max-width: 3.7in; }
+.cv-text .tag { margin-top: 12px; font: 700 8pt/1.5 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--orange); max-width: 3.8in; }
+.cv-text .lead { margin-top: 13px; font-size: 10.6pt; line-height: 1.55; color: var(--body); max-width: 4in; }
+.cv-foot { position: absolute; left: .7in; right: .7in; bottom: .4in; display: flex; justify-content: space-between; align-items: center; border-top: 2px solid var(--navy); padding-top: 11px; }
+.cv-foot img { height: 17px; width: auto; }
+.cv-foot span { font: 600 7pt/1 var(--font); letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+.cv-band { display: flex; flex-wrap: wrap; gap: 5px 0; margin-top: 18px; max-width: 3.9in; }
+.cv-band span { font: 700 7pt/1.6 var(--font); letter-spacing: .08em; text-transform: uppercase; color: var(--navy); padding: 0 11px; border-left: 1px solid var(--line-hi); }
+.cv-band span:first-child { padding-left: 0; border-left: 0; }
