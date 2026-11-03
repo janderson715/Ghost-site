@@ -1,9 +1,10 @@
 # G.H.O.S.T. documents
 
-Five documents, each in two looks. Download the PDF you need. Use the dark files on screen and the white-print files for paper.
+Six documents. Five come in two looks. Download the PDF you need. Use the dark files on screen and the white-print files for paper.
 
 | Document | Dark (screen) | White (print) |
 |---|---|---|
+| Commercial Brochure, corporate edition (business version, no classification marks) | corporate/GHOST-Commercial-Brochure-Corporate.pdf | (already white) |
 | Handbook (69 pages, everything in one) | dark/GHOST-Handbook.pdf | white-print/GHOST-Handbook-White.pdf |
 | Platform Capability Brochure | dark/GHOST-Warfighter-Capability.pdf | white-print/GHOST-Warfighter-Capability-White.pdf |
 | Commercial Brochure | dark/GHOST-Commercial-Brochure.pdf | white-print/GHOST-Commercial-Brochure-White.pdf |
