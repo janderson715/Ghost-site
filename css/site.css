@@ -252,6 +252,7 @@ html:not(.js) .mstep { position: static; opacity: 1; transform: none; width: aut
 /* ---------- Fielded ---------- */
 .fielded { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
 .fielded p + p { margin-top: 16px; }
+@media (max-width: 860px) { .fielded { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
 .fielded .bul { margin-top: 10px; }
 
 /* ---------- Contact ---------- */
