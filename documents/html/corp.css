@@ -15,7 +15,6 @@ body { font-size: 9.4pt; }
 .run span { font: 600 7pt/1 var(--font); letter-spacing: .12em; color: #b9c7da; }
 .foot { left: .7in; right: .7in; bottom: .3in; font: 500 6.8pt/1 var(--font); letter-spacing: .04em; color: var(--muted); }
 .foot b { color: var(--navy); font-family: var(--font); letter-spacing: .04em; }
-.page img[src*="logos/cypher"] { filter: none; }
 
 /* type: sentence-case labels in teal, no wide lettering */
 .eyebrow { font: 700 8pt/1.3 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
