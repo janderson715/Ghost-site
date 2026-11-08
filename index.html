@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#050507">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=20261108m">
+<link rel="stylesheet" href="css/site.css?v=20261108n">
 <script>document.documentElement.className+=" js"</script>
 </head>
 <body>
@@ -252,12 +252,26 @@
           <input type="hidden" name="_subject" value="G.H.O.S.T. demo request from ghostplatform.ai">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://ghostplatform.ai/thanks.html">
+          <input type="hidden" name="_t" value="">
           <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input id="f-honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
           <div class="pair"><div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="f-org">Organization</label><input id="f-org" name="organization" type="text" autocomplete="organization" required></div></div>
           <div class="pair"><div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div></div>
-          <div class="field"><label for="f-msg">What would you like to see?</label><textarea id="f-msg" name="message" rows="6" placeholder="For example: our staff plans on a closed network and we want to see BATTLEMIND on our own documents." required></textarea></div>
+          <div class="field"><label for="f-topic">What is this about?</label>
+            <select id="f-topic" name="topic" required>
+              <option value="" selected disabled>Please choose&hellip;</option>
+              <option>Products and demos</option>
+              <option>Pricing</option>
+              <option>Partnership</option>
+              <option>Support</option>
+              <option>Careers</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-msg">What would you like to see?</label><textarea id="f-msg" name="message" rows="6" minlength="20" placeholder="For example: our staff plans on a closed network and we want to see BATTLEMIND on our own documents." required></textarea></div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAF5C0E8AoALWH5Gg" data-theme="auto"></div>
           <div><button class="btn btn-primary" type="submit">Send request</button></div>
           <small>We use what you send only to reply to you.</small>
+          <p class="alt-contact">Prefer email? Write to us at the address shown here.</p>
         </form>
         <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
       </div>
@@ -297,6 +311,7 @@
     <div class="foot-bottom"><span>&copy; <span data-year>2026</span> Cypher, LLC. All rights reserved.</span><span>C.O.S.M.O and G.H.O.S.T. are separate products of Cypher, LLC.</span></div>
   </div>
 </footer>
-<script src="js/site.js?v=3" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="js/site.js?v=4" defer></script>
 </body>
 </html>

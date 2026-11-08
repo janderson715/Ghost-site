@@ -77,6 +77,9 @@
   var form = document.querySelector('form[data-email]');
   if (!form || !window.fetch) return;
   var email = form.getAttribute('data-email').trim();
+  // When the page finished rendering. The Worker rejects anything sent in under 3 seconds.
+  var stamp = form.querySelector('[name="_t"]');
+  if (stamp) stamp.value = String(Date.now());
   var status = document.getElementById('form-status');
   var button = form.querySelector('button[type="submit"]');
   var label = button ? button.textContent : '';
@@ -94,7 +97,10 @@
         if (j && (j.success === 'true' || j.success === true)) { form.reset(); show('Thank you. We received your request and will reply by email.', false); }
         else { show('That did not send. Please email support@ghostplatform.ai instead.', true); }
       })
-      .catch(function () { show('That did not send. Please email support@ghostplatform.ai instead.', true); })
+      .catch(function () {
+        try { if (window.turnstile) window.turnstile.reset(); } catch (err) {}   // the token is single-use
+        show('That did not send. Please email support@ghostplatform.ai instead.', true);
+      })
       .then(function () { if (button) { button.disabled = false; button.textContent = label; } });
   });
 })();
