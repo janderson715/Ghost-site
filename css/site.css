@@ -457,7 +457,9 @@ html:not(.js) .capx-panel + .capx-panel { margin-top: 56px; padding-top: 40px; b
    The badge is a black disc on a transparent ground, so it sits on a white plaque - its own
    colours are never altered, which the TSM welcome kit requires. The kit also requires the
    badge to link to tradewindai.com and to state that viewing needs a government login. */
-.awardable-band { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(28px, 4vw, 48px) 0; }
+/* --bg, not --bg-2: the lifted tone reads blue next to the near-black the rest of the page uses.
+   The hairline borders alone give the band its separation. */
+.awardable-band { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(28px, 4vw, 48px) 0; }
 .awardable { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
 .awardable-seal { display: block; line-height: 0; flex: none; padding: 12px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
 .awardable-seal img { display: block; width: 136px; height: 136px; }
