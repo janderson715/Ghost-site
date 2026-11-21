@@ -450,3 +450,24 @@ html:not(.js) .capx-panel + .capx-panel { margin-top: 56px; padding-top: 40px; b
 
 /* Fallback route for a real person the form turns away. */
 .alt-contact { margin-top: 14px; font-size: .95rem; opacity: .75; }
+
+/* Tradewinds Solutions Marketplace Awardable band, directly under the hero.
+   Its own full-width band rather than inside the hero: the hero copy column is only ~4.6fr,
+   too narrow for the seal and this much text to sit side by side.
+   The badge is a black disc on a transparent ground, so it sits on a white plaque - its own
+   colours are never altered, which the TSM welcome kit requires. The kit also requires the
+   badge to link to tradewindai.com and to state that viewing needs a government login. */
+.awardable-band { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(28px, 4vw, 48px) 0; }
+.awardable { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
+.awardable-seal { display: block; line-height: 0; flex: none; padding: 12px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.awardable-seal img { display: block; width: 136px; height: 136px; }
+.awardable-seal:hover, .awardable-seal:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,107,0,.18); }
+.awardable-copy h2 { margin: 12px 0 10px; font-size: clamp(1.15rem, .9rem + .8vw, 1.6rem); line-height: 1.2; }
+.awardable-copy p { margin: 0 0 8px; color: var(--body); }
+.awardable-copy > p:last-child { margin-bottom: 0; }
+.awardable-note { font-size: 14px; line-height: 1.6; color: var(--muted); }
+.awardable-note a { color: var(--orange-hi); }
+@media (max-width: 720px) {
+  .awardable { grid-template-columns: 1fr; justify-items: start; gap: 18px; }
+  .awardable-seal img { width: 104px; height: 104px; }
+}
