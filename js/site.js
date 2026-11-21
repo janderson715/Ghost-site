@@ -47,7 +47,7 @@
     var track = morph.querySelector('.morph-track');
     var N = steps.length || 1;
     var render = function () {
-      if (!track || window.innerWidth <= 860) return;
+      if (!track || window.innerWidth <= 600) return;
       var total = track.offsetHeight - window.innerHeight;
       var p = total > 0 ? Math.min(Math.max(-track.getBoundingClientRect().top / total, 0), 1) : 0;
       var seg = p * N;

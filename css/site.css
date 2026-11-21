@@ -115,7 +115,10 @@ h3 { font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); line-height: 1.25; }
 .hero-tag { margin-top: 34px; font: 500 12px/1.4 var(--disp); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .hero-media { position: relative; }
 .hero-media::before { content: ""; position: absolute; left: 8%; right: 8%; bottom: -4%; height: 26%; background: radial-gradient(closest-side, rgba(255,107,0,.35), transparent); filter: blur(22px); z-index: -1; }
-@media (max-width: 960px) { .hero { min-height: 0; padding-top: 120px; } .hero .wrap { grid-template-columns: 1fr; } }
+@media (min-width: 961px) { .hero-media { left: min(calc((100vw - min(var(--wrap), 100vw - 56px)) / 2 - 22px), 120px); } }
+@media (max-width: 960px) { .hero { min-height: 0; padding-top: 120px; } .hero .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 24px; } }
+@media (max-width: 960px) and (min-width: 601px) { .hero h1 { font-size: clamp(1.6rem, 1rem + 2.4vw, 2.4rem); } .hero-logo { width: clamp(180px, 24vw, 250px); } }
+@media (max-width: 600px) { .hero .wrap { grid-template-columns: 1fr; } }
 
 /* ---------- MacBook (real frame, logo wiped) ---------- */
 .mbk { position: relative; width: 100%; aspect-ratio: 1208 / 700; margin: 0; }
@@ -169,7 +172,13 @@ h3 { font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); line-height: 1.25; }
 html:not(.js) .morph-track, html:not(.js) .morph-stage { height: auto; }
 html:not(.js) .morph-stage { position: static; display: block; }
 html:not(.js) .mstep { position: static; opacity: 1; transform: none; width: auto; padding: 20px 0; text-align: left; }
-@media (max-width: 860px) {
+@media (max-width: 1100px) and (min-width: 601px) {
+  .morph-screen { width: 52%; }
+  .mstep { width: 22%; }
+  .mstep h3 { font-size: clamp(1.15rem, .8rem + 1.1vw, 1.6rem); }
+  .mstep p { font-size: .92rem; }
+}
+@media (max-width: 600px) {
   .morph-track { height: auto; margin-top: 0; }
   .morph-stage { position: static; height: auto; display: block; }
   .morph-screen { position: relative; top: auto; width: 100%; margin: 0 auto 26px; }
@@ -240,7 +249,8 @@ html:not(.js) .mstep { position: static; opacity: 1; transform: none; width: aut
 .archx-layer { padding: 12px 0; border-top: 1px solid rgba(255,107,0,.25); text-align: left; }
 .archx-layer strong { display: block; color: var(--ink); font-size: .96rem; }
 .archx-layer span { display: block; color: var(--body); font-size: .84rem; line-height: 1.4; margin-top: 2px; }
-@media (max-width: 900px) { .archx { grid-template-columns: 1fr; } .archx-flow { display: none; } }
+@media (max-width: 900px) and (min-width: 601px) { .archx { gap: 18px; } .archx-col { padding: 16px 14px; } .archx-item { gap: 10px; min-height: 64px; } .archx-logos { min-width: 30px; } .archx-logos img { height: 20px; } .archx-txt strong { font-size: .88rem; } .archx-txt span { font-size: .78rem; } }
+@media (max-width: 600px) { .archx { grid-template-columns: 1fr; } .archx-flow { display: none; } }
 .modes { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(24px, 3vw, 48px); margin-top: clamp(48px, 6vw, 84px); }
 .mode { border-top: 2px solid var(--orange); padding-top: 20px; }
 .mode svg { width: 34px; height: 34px; color: var(--orange); stroke-width: 1.4; margin-bottom: 16px; }
@@ -429,17 +439,19 @@ html:not(.js) .capx-panel + .capx-panel { margin-top: 56px; padding-top: 40px; b
   .capx-tt small { display: none; }
 }
 @media (max-width: 860px) {
+  .capx-tiers { grid-template-columns: minmax(0, 1fr); }
+  .capx-pillars { grid-template-columns: minmax(0, 1fr); }
+  .capx-bar { gap: 14px; padding: 12px 16px; font-size: 10px; }
+  .capx-stat:nth-of-type(1) { display: none; }
+  .capx-track span { max-width: 22%; }
+}
+@media (max-width: 600px) {
   .capx-pipe { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-left: 4px; margin-top: 26px; }
   .capx-pipe::before { left: 21px; right: auto; top: 8px; bottom: 28px; width: 2px; height: auto; background: linear-gradient(180deg, var(--line-hi), var(--line-hi)); }
   .capx-pipe::after { display: none; }
   .capx-pipe li { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 18px; text-align: left; padding: 10px 0; }
   .capx-dot { margin: 0; grid-row: 1 / span 2; }
   .capx-pipe li > span:last-child { margin-top: 2px; }
-  .capx-tiers { grid-template-columns: minmax(0, 1fr); }
-  .capx-pillars { grid-template-columns: minmax(0, 1fr); }
-  .capx-bar { gap: 14px; padding: 12px 16px; font-size: 10px; }
-  .capx-stat:nth-of-type(1) { display: none; }
-  .capx-track span { max-width: 22%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .capx-led, .capx-loop em, .capx-foot i, .capx-track u, .capx-pipe::after, .capx-panel, .capx-pipe li { animation: none; }
