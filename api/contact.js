@@ -3,11 +3,11 @@
 //
 // Environment variables (Vercel > Project > Settings > Environment Variables):
 //   RESEND_API_KEY        required. Resend API key. Never commit it.
-//   CONTACT_TO            optional. Defaults to janderson@cypher-llc.com
+//   CONTACT_TO            optional. Defaults to support@ghostplatform.ai
 //   CONTACT_FROM          optional. Defaults to "G.H.O.S.T. Website <support@ghostplatform.ai>"
 //   TURNSTILE_SECRET_KEY  optional. If set, the Cloudflare Turnstile token is verified.
 
-const TO = process.env.CONTACT_TO || 'janderson@cypher-llc.com';
+const TO = process.env.CONTACT_TO || 'support@ghostplatform.ai';
 const FROM = process.env.CONTACT_FROM || 'G.H.O.S.T. Website <support@ghostplatform.ai>';
 const ORIGINS = ['https://ghostplatform.ai', 'https://www.ghostplatform.ai'];
 
